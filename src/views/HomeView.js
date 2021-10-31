@@ -1,14 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../services/API';
+import MovieList from '../components/MovieList';
 
 export default function HomeView() {
   const [movies, setMovies] = useState([]);
 
-  setMovies({}, []);
+  useEffect(() => {
+    api.GetTrending().then(response => {
+      setMovies(response.data.results);
+      console.log(response.data);
+    });
+  }, []);
+
+  // //
 
   return (
     <>
       <h1>Trending today</h1>
+      {movies && <MovieList data={movies} />}
     </>
   );
 }

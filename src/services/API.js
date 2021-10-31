@@ -5,11 +5,11 @@ const API_KEY = '76d7cb4bbfc6710cab35d56c193859e0';
 
 const api = {
   GetTrending() {
-    axios
+    return axios
       .get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`)
       .then(function (response) {
         // handle success
-        console.log(response);
+        return response;
       })
       .catch(function (error) {
         // handle error
@@ -20,7 +20,20 @@ const api = {
     //   });
   },
 
-  //   searchMovie() {},
+  searchMovie(req) {
+    return axios
+      .get(
+        `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${req}&language=en-US&page=1&include_adult=false`,
+      )
+      .then(function (response) {
+        // handle success
+        return response;
+      })
+      .catch(function (error) {
+        // handle error
+        console.log('API error' + error);
+      });
+  },
   //   GetMovieDetails() {},
   //   GetMovieCredits() {},
   //   GetMovieReviews() {},
