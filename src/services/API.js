@@ -34,7 +34,19 @@ const api = {
         console.log('API error' + error);
       });
   },
-  //   GetMovieDetails() {},
+
+  GetMovieDetails(id) {
+    return axios
+      .get(`${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`)
+      .then(function (response) {
+        // handle success
+        return response;
+      })
+      .catch(function (error) {
+        // handle error
+        console.log('API error' + error);
+      });
+  },
   //   GetMovieCredits() {},
   //   GetMovieReviews() {},
 };

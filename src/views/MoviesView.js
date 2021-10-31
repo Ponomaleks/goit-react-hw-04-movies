@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import api from '../services/API';
 import SearchBar from '../components/SearchBar';
 import MovieList from '../components/MovieList';

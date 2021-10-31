@@ -8,7 +8,6 @@ export default function HomeView() {
   useEffect(() => {
     api.GetTrending().then(response => {
       setMovies(response.data.results);
-      console.log(response.data);
     });
   }, []);
 

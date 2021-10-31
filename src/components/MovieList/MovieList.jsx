@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import MovieCard from '../MovieCard';
 
 export default function MovieList({ data }) {
@@ -6,7 +7,9 @@ export default function MovieList({ data }) {
       {data.map(movie => {
         return (
           <li key={movie.id}>
-            <MovieCard data={movie} />
+            <Link to={`/movies/${movie.id}`}>
+              <MovieCard data={movie} />
+            </Link>
           </li>
         );
       })}
