@@ -1,0 +1,7 @@
+.navLink {
+  padding-left: 20px;
+}
+
+.activeNavLink {
+  color: brown;
+}
