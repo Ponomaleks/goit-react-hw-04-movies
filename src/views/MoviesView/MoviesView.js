@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-import api from '../services/API';
-import SearchBar from '../components/SearchBar';
-import MovieList from '../components/MovieList';
+import api from '../../services/API';
+import SearchBar from '../../components/SearchBar';
+import MovieList from '../../components/MovieList';
 
 export default function MoviesView() {
   const [movies, setMovies] = useState(null);
