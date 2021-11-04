@@ -1,0 +1,12 @@
+.card__title {
+  color: black;
+  font: 28px bold;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.card__date {
+  color: black;
+  margin: 0;
+  padding: 5px 0;
+}

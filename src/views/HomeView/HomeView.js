@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import api from '../../services/API';
 import MovieList from '../../components/MovieList';
 
 export default function HomeView() {
   const [movies, setMovies] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     api.GetTrending().then(response => {
@@ -15,8 +17,8 @@ export default function HomeView() {
 
   return (
     <>
-      <h1>Trending today</h1>
-      {movies && <MovieList data={movies} />}
+      <h1 style={{ marginBottom: '10px' }}>Trending today</h1>
+      {movies && <MovieList data={movies} url={'movies'} location={location} />}
     </>
   );
 }

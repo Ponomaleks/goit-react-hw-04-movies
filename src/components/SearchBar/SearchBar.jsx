@@ -1,4 +1,6 @@
 import { useState } from 'react';
+// import s from './SearchBar.module.css';
+
 export default function Input({ onSubmit }) {
   const [value, setValue] = useState('');
 
